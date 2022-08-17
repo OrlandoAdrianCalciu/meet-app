@@ -45,7 +45,6 @@ module.exports.getAccessToken = async (event) => {
         client_secret,
         redirect_uris[0]
     );
-
     const code = decodeURIComponent(`${event.pathParameters.code}`);
 
     return new Promise((resolve, reject) => {
@@ -68,5 +67,5 @@ module.exports.getAccessToken = async (event) => {
                 statusCode: 500,
                 body: JSON.stringify(err),
             };
-        });
+        });   
 };
