@@ -24,18 +24,18 @@ const oAuth2Client = new google.auth.OAuth2(
 
 module.exports.getAuthURL = async () => {
     const authUrl = oAuth2Client.generateAuthUrl({
-        access_type: "offline",
-        scope: SCOPES,
+        access_type: 'offline',
+        scope: SCOPES
     });
 
     return {
         statusCode: 200,
         headers: {
-            "Access-Control-Allow-Origin": "*",
+            'Access-Control-Allow-Origin': '*'
         },
         body: JSON.stringify({
-            authUrl: authUrl,
-        }),
+            authUrl: authUrl
+        })
     };
 };
 
@@ -48,6 +48,7 @@ module.exports.getAccessToken = async (event) => {
     const code = decodeURIComponent(`${event.pathParameters.code}`);
 
     return new Promise((resolve, reject) => {
+
         oAuth2Client.getToken(code, (err, token) => {
             if (err) {
                 return reject(err);
@@ -59,9 +60,9 @@ module.exports.getAccessToken = async (event) => {
             return {
                 statusCode: 200,
                 headers: {
-                    "Access-Control-Allow-Origin": "*"
+                    'Access-Control-Allow-Origin': '*'
                 },
-                body: JSON.stringify(token),
+                body: JSON.stringify(token)
             };
         })
         .catch((err) => {
@@ -69,32 +70,33 @@ module.exports.getAccessToken = async (event) => {
             return {
                 statusCode: 500,
                 headers: {
-                    "Access-Control-Allow-Origin": "*"
+                    'Access-Control-Allow-Origin': '*'
                 },
-                body: JSON.stringify(err),
+                body: JSON.stringify(err)
             };
         });
 };
 
-module.exports.getCalendarEvents = event => {
-
+module.exports.getCalendarEvents = async (event) => {
     const oAuth2Client = new google.auth.OAuth2(
         client_id,
         client_secret,
         redirect_uris[0]
     );
-    const access_token = decodeURIComponent(`${event.pathParameters.access_token}`);
+    const access_token = decodeURIComponent(
+        `${event.pathParameters.access_token}`
+    );
+
     oAuth2Client.setCredentials({ access_token });
 
     return new Promise((resolve, reject) => {
-
         calendar.events.list(
             {
                 calendarId: calendar_id,
                 auth: oAuth2Client,
                 timeMin: new Date().toISOString(),
                 singleEvents: true,
-                orderBy: "startTime",
+                orderBy: 'startTime'
             },
             (error, response) => {
                 if (error) {
@@ -104,24 +106,24 @@ module.exports.getCalendarEvents = event => {
                 }
             }
         );
-
     })
-        .then(results => {
+        .then((results) => {
             return {
                 statusCode: 200,
                 headers: {
-                    "Access-Control-Allow-Origin": "*",
+                    'Access-Control-Allow-Origin': '*'
                 },
                 body: JSON.stringify({ events: results.data.items })
             };
         })
-        .catch(error => {
+        .catch((err) => {
+            console.error(err);
             return {
                 statusCode: 500,
                 headers: {
-                    "Access-Control-Allow-Origin": "*",
+                    'Access-Control-Allow-Origin': '*'
                 },
-                body: JSON.stringify(error)
+                body: JSON.stringify(err)
             };
         });
-}
+};
