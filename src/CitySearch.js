@@ -14,6 +14,12 @@ class CitySearch extends Component {
         this.setState({ query: value, suggestions, });
     };
 
+    hanleItemClicked = (suggestion) => {
+        this.setState({
+            query: suggestion
+        });
+    }
+
     render() {
         return (
             <div className="CitySearch">
@@ -25,7 +31,7 @@ class CitySearch extends Component {
                 />
                 <ul className="suggestions">
                     {this.state.suggestions.map((suggestion) => (
-                        <li key={suggestion}>{suggestion}</li>
+                        <li key={suggestion} onClick={() => this.hanleItemClicked(suggestion)}>{suggestion}</li>
                     ))}
                     <li key='all'>
                         <b>See all citites</b>
