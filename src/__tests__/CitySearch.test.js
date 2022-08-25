@@ -30,7 +30,6 @@ describe('<CitySearch /> component', () => {
         expect(CitySearchWrapper.state('query')).toBe('Berlin');
     });
     test('render list of suggestions correctly', () => {
-        const locations = extractLocations(mockData);
         CitySearchWrapper.setState({ suggestions: locations });
         const suggestions = CitySearchWrapper.state('suggestions');
         expect(CitySearchWrapper.find('.suggestions li')).toHaveLength(suggestions.length + 1);
