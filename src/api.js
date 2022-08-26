@@ -70,7 +70,7 @@ const getToken = async (code) => {
 
 export const getAccessToken = async () => {
     const accessToken = localStorage.getItem('acces_token');
-    const tokenCheck = accesToken && (await checkToken(accessToken));
+    const tokenCheck = accessToken && (await checkToken(accessToken));
 
     if (!accessToken || tokenCheck.error) {
         await localStorage.removeItem('access_token');
