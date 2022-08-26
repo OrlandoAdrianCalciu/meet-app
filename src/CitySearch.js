@@ -3,7 +3,8 @@ import React, { Component } from "react";
 class CitySearch extends Component {
     state = {
         query: '',
-        suggestions: []
+        suggestions: [],
+        showSuggestions: undefined
     }
 
     handleInputChanged = (event) => {
@@ -14,10 +15,13 @@ class CitySearch extends Component {
         this.setState({ query: value, suggestions, });
     };
 
-    hanleItemClicked = (suggestion) => {
+    handleItemClicked = (suggestion) => {
         this.setState({
-            query: suggestion
+            query: suggestion,
+            showSuggestions: false
         });
+
+        this.props.updateEvents(suggestion);
     }
 
     render() {
@@ -28,12 +32,16 @@ class CitySearch extends Component {
                     className="city"
                     value={this.state.query}
                     onChange={this.handleInputChanged}
+                    onFocus={() => { this.setState({ showSuggestions: true }) }}
                 />
-                <ul className="suggestions">
+                <ul className="suggestions" style={this.state.showSuggestions ? {}: { display: 'none' }}>
                     {this.state.suggestions.map((suggestion) => (
-                        <li key={suggestion} onClick={() => this.hanleItemClicked(suggestion)}>{suggestion}</li>
+                        <li
+                            key={suggestion}
+                            onClick={() => this.handleItemClicked(suggestion)}
+                        >{suggestion}</li>
                     ))}
-                    <li key='all'>
+                    <li onClick={() => this.handleItemClicked('all')}>
                         <b>See all citites</b>
                     </li>
                 </ul>
