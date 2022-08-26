@@ -70,7 +70,7 @@ export const getAccessToken = async() => {
         const code = await searchParams.get("code");
         if (!code) {
             const results = await axios.get(
-                "https://nnnfa235sd.execute-api.eu-south-1.amazonaws.com/dev/api/get-auth-url"
+                "https://nnnfa235sd.execute-api.eu-south-1.amazonaws.com/dev/api/get-auth-url/"
             );
             const { authUrl } = results.data;
             return (window.location.href = authUrl);
