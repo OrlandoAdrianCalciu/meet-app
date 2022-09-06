@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { ErrorAlert } from "./Alert";
 
 export class NumberOfEvents extends Component {
-    state = { 
+    state = {
         numberOfEvents: 32,
         infoText: '',
     };
@@ -16,7 +16,7 @@ export class NumberOfEvents extends Component {
             });
         } else {
             this.setState({
-                numberOfEvents: value,
+                numberOfEvents: event.target.value,
                 infoText: '',
             });
         }
@@ -26,14 +26,14 @@ export class NumberOfEvents extends Component {
 
     render() {
         return (
-            <div className="numberOfEvents"> 
-            <label className="number-label">Number of Events:</label>
-            <br></br>
-                <input 
-                type='number'
-                className="number-input"
-                value={this.state.numberOfEvents}
-                onChange={this.handleInputChanged}
+            <div className="numberOfEvents">
+                <label className="number-label">Number of Events:</label>
+                <br></br>
+                <input
+                    type='number'
+                    className="number-input"
+                    value={this.state.numberOfEvents}
+                    onChange={this.handleInputChanged}
                 />
                 <ErrorAlert text={this.setState.infoText} />
             </div>
