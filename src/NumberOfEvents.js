@@ -8,7 +8,7 @@ export class NumberOfEvents extends Component {
     };
 
     handleInputChanged = (event) => {
-        const value = event.target.value;
+        let value = event.target.value;
         if (value >= 33 || value <= 0) {
             this.setState({
                 numberOfEvents: value,
@@ -35,7 +35,7 @@ export class NumberOfEvents extends Component {
                     value={this.state.numberOfEvents}
                     onChange={this.handleInputChanged}
                 />
-                <ErrorAlert text={this.setState.infoText} />
+                <ErrorAlert text={this.state.infoText} />
             </div>
         );
     }

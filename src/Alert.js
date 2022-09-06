@@ -36,5 +36,4 @@ class ErrorAlert extends Alert {
 }
 
 
-export { InfoAlert };
-export { ErrorAlert };
+export { InfoAlert, ErrorAlert };
