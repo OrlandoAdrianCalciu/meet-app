@@ -21,13 +21,13 @@ export class NumberOfEvents extends Component {
             });
         }
 
-        this.props.updateEvents(value);
+        this.props.updateEvents(undefined, value);
     };
 
     render() {
         return (
             <div className="numberOfEvents">
-                <label className="number-label">Number of Events:</label>
+                <label className="number-label">Number of Events :</label>
                 <br></br>
                 <input
                     type='number'
