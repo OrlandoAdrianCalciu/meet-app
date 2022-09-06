@@ -5,22 +5,25 @@ import NumberOfEvents from '../NumberOfEvents';
 describe('<NumberOfEvents /> component', () => {
     let NumberOfEventsWrapper;
     beforeAll(() => {
-        NumberOfEventsWrapper = shallow(<NumberOfEvents updateEvents={() => {}}/>);
+        NumberOfEventsWrapper = shallow(<NumberOfEvents updateEvents={() => { }} />);
     });
 
+    test('render numberOfEvents div', () => {
+        expect(NumberOfEventsWrapper.find('.numberOfEvents')).toHaveLength(1);
+    });
+    test('render number label', () => {
+        expect(NumberOfEventsWrapper.find('.number-label')).toHaveLength(1);
+    });
     test('render number input', () => {
         expect(NumberOfEventsWrapper.find('.number-input')).toHaveLength(1);
     });
     test('render default number', () => {
-        expect(NumberOfEventsWrapper.find('.number-input').prop('value')).toEqual(32);
+        expect(NumberOfEventsWrapper.find('.number-input').prop('value')).toBe(32);
     });
     test('render change number', () => {
-        NumberOfEventsWrapper.setState({
-            numberOfEvents: 10
+        NumberOfEventsWrapper.find('.number-input').simulate('change', {
+            target: { value: 5 },
         });
-        const eventObject = { target: { value: 5 } };
-        NumberOfEventsWrapper.find('.number-input').simulate('change', eventObject);
-        expect(NumberOfEventsWrapper.state('numberOfEvents')).not.toEqual(undefined);
-        expect(NumberOfEventsWrapper.state('numberOfEvents')).toBe(5);
+        expect(NumberOfEventsWrapper.find('.number-input').prop('value')).toBe(5);
     });
 });
