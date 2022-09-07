@@ -35,7 +35,9 @@ export class NumberOfEvents extends Component {
                     value={this.state.numberOfEvents}
                     onChange={this.handleInputChanged}
                 />
-                <ErrorAlert text={this.state.infoText} />
+                <div>
+                    <ErrorAlert text={this.state.infoText} />
+                </div>
             </div>
         );
     }
