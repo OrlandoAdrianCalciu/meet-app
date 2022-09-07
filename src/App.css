@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
+
 .App {
   text-align: center;
   padding: 2% 5%;
@@ -20,6 +21,7 @@ p {
 .display-none {
   display: none;
 }
+
 .showSuggestions {
   display: block;
 }
@@ -60,19 +62,19 @@ input[type="number"] {
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
 }
 
-.suggestions > li {
+.suggestions>li {
   text-align: left;
   padding: 8px 6px 8px 10px;
   background-color: #eee;
   cursor: default;
 }
 
-.suggestions > li:last-child {
+.suggestions>li:last-child {
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 }
 
-.suggestions > li:hover {
+.suggestions>li:hover {
   background-color: #bcdcdb;
 }
 
@@ -129,7 +131,6 @@ input[type="number"] {
 }
 
 .Alert {
-  position: fixed;
   top: 20px;
 }
 
@@ -138,10 +139,12 @@ input[type="number"] {
   align-items: center;
   flex-direction: column;
 }
+
 .data-vis-wrapper .recharts-responsive-container {
   min-width: 100%;
   display: flex;
 }
+
 .recharts-surface {
   overflow: visible;
 }
@@ -167,12 +170,15 @@ input[type="number"] {
   border-radius: 2px;
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
 }
+
 .google-btn:hover {
   box-shadow: 0 0 6px #4285f4;
 }
+
 .google-btn:active {
   background: #1669f2;
 }
+
 .google-icon-wrapper {
   position: absolute;
   margin-top: 1px;
@@ -182,6 +188,7 @@ input[type="number"] {
   border-radius: 2px;
   background-color: #fff;
 }
+
 .google-icon {
   position: absolute;
   margin-top: 11px;
@@ -189,6 +196,7 @@ input[type="number"] {
   width: 18px;
   height: 18px;
 }
+
 .btn-text {
   float: right;
   margin: 11px 11px 0 0;
@@ -204,6 +212,7 @@ input[type="number"] {
   .data-vis-wrapper {
     flex-direction: row;
   }
+
   .data-vis-wrapper .recharts-responsive-container {
     flex-basis: 50%;
     max-width: 50%;
