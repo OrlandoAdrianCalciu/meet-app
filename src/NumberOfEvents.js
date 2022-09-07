@@ -26,19 +26,21 @@ export class NumberOfEvents extends Component {
 
     render() {
         return (
-            <div className="numberOfEvents">
-                <label className="number-label">Number of Events :</label>
-                <br></br>
-                <input
-                    type='number'
-                    className="number-input"
-                    value={this.state.numberOfEvents}
-                    onChange={this.handleInputChanged}
-                />
+            <>
+                <div className="numberOfEvents">
+                    <label className="number-label">Number of Events :</label>
+                    <br></br>
+                    <input
+                        type='number'
+                        className="number-input"
+                        value={this.state.numberOfEvents}
+                        onChange={this.handleInputChanged}
+                    />
+                </div>
                 <div>
                     <ErrorAlert text={this.state.infoText} />
                 </div>
-            </div>
+            </>
         );
     }
 }
