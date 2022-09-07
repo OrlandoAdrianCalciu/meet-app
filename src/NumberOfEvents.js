@@ -40,6 +40,7 @@ export class NumberOfEvents extends Component {
                 <div>
                     <ErrorAlert text={this.state.infoText} />
                 </div>
+                <br></br>
             </>
         );
     }
