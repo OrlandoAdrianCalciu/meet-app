@@ -5,6 +5,7 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { extractLocations, getEvents } from './api';
 import './nprogress.css';
+import { OfflineAlert } from './Alert';
 
 
 
@@ -50,6 +51,9 @@ class App extends Component {
     render() {
         return (
             <div className="App">
+                {!navigator.onLine && (
+                    <OfflineAlert text={"You are currently offline"} />
+                )}
                 <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
                 <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateEvents={this.updateEvents} />
                 <EventList events={this.state.events} />
