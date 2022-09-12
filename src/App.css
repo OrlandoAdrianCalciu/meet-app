@@ -1,5 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 
+*{
+  background-color: #3498db;
+  color: white;
+}
+
 .App {
   text-align: center;
   padding: 2% 5%;
@@ -82,10 +87,24 @@ input[type="number"] {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid #ccc;
+  border: 3px solid #E6E6FA;
   border-radius: 4px;
   position: relative;
 }
+
+.event-showDetails-btn, .event-hideDetails-btn{
+  border-radius: 10px;
+  border-color: #E6E6FA;
+  color: black;
+  box-shadow: 0 0 40px 40px #E6E6FA inset, 0 0 0 0 #E6E6FA;
+  transition: all 150ms ease-in-out;
+
+}
+
+.event-showDetails-btn:hover, .event-hideDetails-btn:hover{
+  box-shadow: 0 0 10px 0 #E6E6FA inset, 0 0 10px 4px #E6E6FA;
+}
+
 
 .details-btn {
   position: absolute;
