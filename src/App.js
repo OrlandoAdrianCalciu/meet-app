@@ -62,9 +62,9 @@ class App extends Component {
         if (this.state.showWelcomeScreen === undefined) return <div className='App' />
         return (
             <div className="App">
-                {/* <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => {
+                <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => {
                     getAccessToken();
-                }} /> */}
+                }} />
                 <div className='offlineAlert'>
                     {!navigator.onLine && (
                         <OfflineAlert text={"You are currently offline"} />
