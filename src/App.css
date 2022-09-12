@@ -48,7 +48,7 @@ input[type="number"] {
   flex-basis: 300px;
   max-width: 300px;
   margin: auto;
-  position: relative;
+  /* position: relative; */
 }
 
 .suggestions {
@@ -199,7 +199,7 @@ input[type="number"] {
 
 .btn-text {
   float: right;
-  margin: 11px 11px 0 0;
+  margin: 11px 0 2 0;
   color: #fff;
   font-size: 14px;
   letter-spacing: 0.2px;

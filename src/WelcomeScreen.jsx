@@ -31,7 +31,7 @@ o.svg"
                     </div>
                 </div>
                 <a
-                    href="https://OrlandoAdrianCalciu.github.io/meet/privacy.html"
+                    href="https://OrlandoAdrianCalciu.github.io/meet-app/privacy.html"
                     rel="nofollow noopener"
                 >
                     Privacy policy
