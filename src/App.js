@@ -7,7 +7,7 @@ import { extractLocations, getEvents, checkToken, getAccessToken } from './api';
 import WelcomeScreen from './WelcomeScreen';
 import './nprogress.css';
 import { OfflineAlert } from './Alert';
-// import { OfflineAlert } from './Alert';
+
 
 
 
@@ -20,7 +20,7 @@ class App extends Component {
         showWelcomeScreen: undefined
     }
 
-    async componentDidMount() {
+    async componentDidMount() { 
         this.mounted = true;
         const accessToken = localStorage.getItem("access_token");
         const isTokenValid = (await checkToken(accessToken)).error ? false : true;
