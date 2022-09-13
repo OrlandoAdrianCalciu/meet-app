@@ -8,11 +8,11 @@ import * as atatus from 'atatus-spa';
 
 atatus.config('418251d1a24b449c94a3353d1bce74ac').install();
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
 // If you want your app to work offline and load faster, you can change
