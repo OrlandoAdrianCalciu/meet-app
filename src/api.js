@@ -27,12 +27,12 @@ export const getEvents = async () => {
         return mockData;
     }
 
-    if (!navigator.onLine) {
-        console.log('You are offline!');
-        const data = localStorage.getItem("lastEvents");
-        NProgress.done();
-        return data ? JSON.parse(data).events : [];
-    }
+    // if (!navigator.onLine) {
+    //     console.log('You are offline!');
+    //     const data = localStorage.getItem("lastEvents");
+    //     NProgress.done();
+    //     return data ? JSON.parse(data).events : [];
+    // }
 
     const token = await getAccessToken();
 
