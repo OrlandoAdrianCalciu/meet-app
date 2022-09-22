@@ -1,5 +1,10 @@
 ## Meet-app
 
+## Description
+
+This is a serverless, PWA app built using the TDD process. It's main purpose is to show users events by city. It uses the Google Calendar API.
+
+
 ## Feature 1: Filter events by city
 
 As a user, I would like to be able to filter events by city so that I can see the list of events that take place in that city.
