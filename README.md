@@ -4,7 +4,7 @@
 
 This is a serverless, PWA app built using the TDD process. It's main purpose is to show users events by city. It uses the Google Calendar API.
 
-##Demo
+## Demo
 
 -Demo Site URL: [Meet-App](https://orlandoadriancalciu.github.io/meet-app/)
 
