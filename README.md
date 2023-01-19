@@ -6,7 +6,7 @@ This is a serverless, PWA app built using the TDD process. It's main purpose is 
 
 ## Demo
 
--Demo Site URL: [Meet-App](https://orlandoadriancalciu.github.io/meet-app/)
+- Demo Site URL: [Meet-App](https://orlandoadriancalciu.github.io/meet-app/)
 
 
 ## Feature 1: Filter events by city
